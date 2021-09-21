@@ -39,8 +39,8 @@ require_once '../renderize/index.php'; //requeri a pagina index que contem a con
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" 
     rel="stylesheet" 
     />
-    <!-- Core theme CSS (RENDERIZE)-->
-    <link href="<?php echo pg; ?>/assets/css/styles.css" rel="stylesheet" />
+    <!-- Core theme CSS (Blog)-->
+    <link href="<?php echo pg; ?>/assets/css/styles_blog.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     
 

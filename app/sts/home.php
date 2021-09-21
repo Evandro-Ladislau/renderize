@@ -5,7 +5,7 @@ if(!isset($seguranca)){
 
 include_once 'app/sts/header.php'; // incui o header 
 ?>
-<body>
+<body id="page-top">
 <?php
 
 include_once 'app/sts/menu_renderize.php'; // inclui o menu do site renderize.
@@ -43,8 +43,8 @@ include_once 'app/sts/menu_renderize.php'; // inclui o menu do site renderize.
                         <p class="text-black">Da paixão por tecnologia nasceu a Application Web, 
                             criada por Evandro Ladislau 
                             <a target="_blanck" href="https://www.linkedin.com/in/evandro-ladislau/" 
-                            class="fab fa-linkedin text-muted mr-4"
-                            >
+                            class=" text-muted mr-4">
+                            <i class="fab fa-linkedin"></i>
                             </a>, 
                             formado Técnico de Informática Web Design em 2018 pela instituição de ensino SENAC-RJ,
                             iniciou sua jornada como estágiario e foi contratado como Técnico de Suporte 
@@ -163,6 +163,7 @@ include_once 'app/sts/menu_renderize.php'; // inclui o menu do site renderize.
         </section>
         <?php
         include_once 'app/sts/footer_renderize.php';
+        include_once 'app/sts/rodape_lib.php';
         ?>
 </body>
 
