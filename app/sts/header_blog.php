@@ -44,12 +44,5 @@ require_once '../renderize/index.php'; //requeri a pagina index que contem a con
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     
 
-    <!-- Foi nescessario colocar esse style pois pelo arquibo css não consegui embutir codigo php informando a variavel pg-->
-    <style>
-        header.masthead {
-            background-image: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("<?php echo pg; ?>/assets/img/bg-masthead.jpg");
-        }
-
-    </style>
 </head>
 

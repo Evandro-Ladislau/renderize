@@ -15,12 +15,13 @@ $url = filter_input(INPUT_GET, 'url', FILTER_SANITIZE_STRING);
 //limpar $rul
 $ur_limpa = limparUrl($url);
 $endereco = explode('/', $ur_limpa); //transforma a string em um array, separando o valor da url na posicao 0 o nome do arquivo existente e na posicao 1 o nome do artigo ex curso-php
-
+$sts_situacoes = 1;
 //select usando pdo
 //esse select busca no banco as paginas cadastradas com o valor da situacao da pagina igual a 1 (ativo).
 //o endereco[0] aqui indica o valor do nome do arquivo da pagina cadastrado no banco de dados.
-$cmd = $pdo->prepare("SELECT * FROM sts_paginas WHERE endereco=:endereco AND sts_situacaos_pg_id=1");
+$cmd = $pdo->prepare("SELECT * FROM sts_paginas WHERE endereco=:endereco AND sts_situacaos_pg_id=:sts_situacoes");
 $cmd->bindValue(':endereco', $endereco[0]);
+$cmd->bindParam(':sts_situacoes', $sts_situacoes, PDO::PARAM_INT);
 $cmd->execute();
 $result_paginas = $cmd->fetchAll(PDO::FETCH_ASSOC);
 

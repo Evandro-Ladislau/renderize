@@ -9,7 +9,7 @@ require_once '../renderize/index.php'; //requeri a pagina index que contem a con
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php
-    //percorrendo o array com os valores da pagina e colocando das tag referentes a SEO
+    //percorrendo o array com os valores da pagina e colocando nas tag referentes a SEO
     if($result_paginas){
         for ($i=0; $i < count($result_paginas) ; $i++) { 
            ?>
@@ -47,7 +47,7 @@ require_once '../renderize/index.php'; //requeri a pagina index que contem a con
     <!-- Foi nescessario colocar esse style pois pelo arquibo css não consegui embutir codigo php informando a variavel pg-->
     <style>
         header.masthead {
-            background-image: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("<?php echo pg; ?>/assets/img/bg-masthead.jpg");
+            background-image: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("<?php echo pg; ?>/assets/img/masthedad/1/bg-masthead.jpg");
         }
 
     </style>
