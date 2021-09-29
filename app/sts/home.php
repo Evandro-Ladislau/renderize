@@ -193,34 +193,52 @@ include_once 'app/sts/header.php'; // incui o header
             <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
                 <div class="col-lg-6">
 
-                    <form action="<?php echo pg; ?>/proc_cad_cliente" method="POST" id="contactForm" >
+                    <form action="<?php echo pg; ?>/proc_cad_cliente" method="POST" id="contactForm">
+                    <?php if (!empty($_SESSION['vazio_sucesso'])) {
+                                echo $_SESSION['vazio_sucesso'];
+                                unset($_SESSION['vazio_sucesso']);
+                            } ?>
                         <!-- Name input-->
                         <div class="form-floating mb-3 port-left">
-                            <input class="form-control" id="nome" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                            <label for="name">Nome Completo</label>
-                            <div class="invalid-feedback" data-sb-feedback="name:required">Campo Obrigatório</div>
+                            <input class="form-control" id="nome" type="text" name="nome" placeholder="Nome Completo" required/>
+                            <label for="nome">Nome Completo</label>
+                            <?php if (!empty($_SESSION['vazio_nome'])) {
+                                echo $_SESSION['vazio_nome'];
+                                unset($_SESSION['vazio_nome']);
+                            } ?>
                         </div>
+
                         <!-- Email address input-->
                         <div class="form-floating mb-3 port-right">
-                            <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                            <input class="form-control" id="email" type="email" name="email" placeholder="Email" required/>
                             <label for="email">Email</label>
-                            <div class="invalid-feedback" data-sb-feedback="email:required">Campo Obrigatório</div>
-                            <div class="invalid-feedback" data-sb-feedback="email:email">Email Invalido</div>
+                            <?php if (!empty($_SESSION['vazio_email'])) {
+                                echo $_SESSION['vazio_email'];
+                                unset($_SESSION['vazio_email']);
+                            } ?>
                         </div>
+
                         <!-- Phone number input-->
                         <div class="form-floating mb-3 port-left">
-                            <input class="form-control" id="telefone" type="tel" placeholder="(21) 98456-7890" data-sb-validations="required" />
+                            <input class="form-control" id="telefone" type="tel" name="telefone" placeholder="Telefone" required />
                             <label for="phone">Telefone</label>
-                            <div class="invalid-feedback" data-sb-feedback="phone:required">Campo Obrigatório</div>
+                            <?php if (!empty($_SESSION['vazio_telefone'])) {
+                                echo $_SESSION['vazio_telefone'];
+                                unset($_SESSION['vazio_telefone']);
+                            } ?>
                         </div>
+
                         <!-- Message input-->
                         <div class="form-floating mb-3 port-right">
-                            <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                            <div class="invalid-feedback" data-sb-feedback="message:required">Campo Obrigatório</div>
+                            <textarea class="form-control" id="message" name="message" type="text" style="height: 10rem" required></textarea>
+                            <?php if (!empty($_SESSION['vazio_message'])) {
+                                echo $_SESSION['vazio_message'];
+                                unset($_SESSION['vazio_message']);
+                            }
+
+                            ?>
                         </div>
-                        <div class="d-none" id="submitErrorMessage">
-                            <div class="text-center text-danger mb-3">Error sending message!</div>
-                        </div>
+
                         <!-- Submit Button-->
                         <div class="d-grid port-bottom"><input class="btn btn-primary btn-xl" name="SendCadCliente" type="submit" value="Enviar"></input></div>
                     </form>

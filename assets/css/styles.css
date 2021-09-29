@@ -252,6 +252,8 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
 }
 
 
+
+
 .portgaleria img:hover {
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);

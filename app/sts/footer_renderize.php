@@ -3,6 +3,15 @@ if(!isset($seguranca)){
     exit;
 }
 //arquivo footer que é incluído no site renderize.
+
+//BUSCAR DADOS NO BANCO DE DADOS REFERENTE AS INFORMAÇÕES DO RODAPE
+$sts_situacoe = 1;
+    $cmd = $pdo->query("SELECT rodape.*, 
+                        cor.cor FROM `sts_rodape` 
+                        rodape INNER JOIN sts_cors cor ON cor.id=rodape.sts_cor_id 
+                        WHERE  sts_situacoe_id=1 ");
+
+    $result_rodape = $cmd->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <footer class=" text-center text-lg-start py-5" id="institucional">
@@ -11,28 +20,28 @@ if(!isset($seguranca)){
               <!--Grid row-->
               <div class="row">
                 <!--Grid column-->
-                <div class="col-lg-6 col-md-12 mb-4 mb-md-0 div-missao">
-                  <h5 class="text-uppercase">Missão</h5>
-          
-                  <p>
-                     Desenvolver aplicações web para nossos clientes, sempre com excêlencia, qualidade,
-                     transparência e pontualidade, afim de superar as suas expectativas e agregar valores aos 
-                     seus negócios, com o melhor e mais atual da tecnologia da informação.
-                  </p>
-                </div>
-                <!--Grid column-->
-                <div class="col-lg-6 col-md-12 mb-4 mb-md-0 div-valores">
-                  <h5 class="text-uppercase">Valores</h5>
-                  <p>
-                        Paixão por tecnologia;
-                        Integridade;
-                        Respeito;
-                        Capacitação;
-                        Responsabilidade;
-                  </p>
-                </div>
-              </div>
-            </div>
+                  <?php
+                  //PERCORRER OS DADOS USANDO O FOREACH PARA POSIBILITAR PEGAR OS VALORES DE DENTRO DA MATRIZ.
+                  if($result_rodape){
+                    for ($i=0; $i <count($result_rodape) ; $i++) { 
+
+                      foreach ($result_rodape[$i] as $k => $v) {
+                        if ($k == 'id') {
+                          ?>
+                          <div class="col-lg-6 col-md-12 mb-4 mb-md-0 <?php echo $result_rodape[$i]['class'];?>">
+                          <h5 class="text-uppercase"><?php echo $result_rodape[$i]['titulo']; ?></h5>
+                          <p>
+                        <?php echo $result_rodape[$i]['descricao'];?></p>
+                        </div>
+                        
+                          <?php
+                        }
+                      }
+                    }
+                  }
+                  ?>
+                  </div>
+                  </div>
             <!-- Grid container -->
             <!-- Copyright -->
             <div class="small text-center text-muted">

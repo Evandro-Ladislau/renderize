@@ -7,3 +7,5 @@ RewriteCond %{REQUEST_FILENAME} !-l
 RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
 
 Options -Indexes
+
+php_value default_charset ISO-8859-1
