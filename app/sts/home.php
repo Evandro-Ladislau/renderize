@@ -3,7 +3,7 @@ if (!isset($seguranca)) {
     exit;
 }
 
-include_once 'app/sts/header.php'; // incui o header 
+include_once 'app/sts/header_renderize.php'; // incui o header 
 ?>
 
 <body id="page-top">

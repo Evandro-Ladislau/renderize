@@ -16,7 +16,7 @@ require_once '../renderize/index.php'; //requeri a pagina index que contem a con
     <title><?php echo $result_paginas[$i]['nome_pagina']?></title>
     <meta name="robots" content="<?php echo $result_paginas[$i]['robots']?>"/>
     <meta name="keywords" content="<?php echo $result_paginas[$i]['keywords']?>">
-    <meta name="<?php echo $result_paginas[$i]['description']?>"/>
+    <meta name="description" content="<?php echo $result_paginas[$i]['description']?>"/>
     <meta name="author" content="<?php echo $result_paginas[$i]['autor']?>" />
            <?php
         }

@@ -16,13 +16,10 @@ if(!isset($seguranca)){
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link px-lg-3 py-3 py-lg-4" href="<?php echo pg; ?>/index.php">Home</a>
+                            <a class="nav-link px-lg-3 py-3 py-lg-4" href="<?php echo pg; ?>/blog">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-lg-3 py-3 py-lg-4" href="#noticias">Noticias</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link px-lg-3 py-3 py-lg-4" href="#midia">Midia</a>
+                            <a class="nav-link px-lg-3 py-3 py-lg-4" href="#midia">Midias</a>
                         </li>
                     </ul>
                 </div>

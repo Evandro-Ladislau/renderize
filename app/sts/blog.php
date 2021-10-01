@@ -9,28 +9,6 @@ require_once '../renderize/index.php';
 ?>
 
 <body>
-    <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-        <div class="container px-4 px-lg-5">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link px-lg-3 py-3 py-lg-4" href="<?php echo pg; ?>/index.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-lg-3 py-3 py-lg-4" href="#noticias">Notícias</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link px-lg-3 py-3 py-lg-4" href="#midia">Mídia</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
     <!-- Page Header-->
     <header class="masthead" style="background-image: url('assets/img/blog/home-bg.jpg')">
         <div class="container position-relative px-4 px-lg-5">
@@ -89,8 +67,7 @@ require_once '../renderize/index.php';
                             }
                         }
                     }
-
-
+                    
                     ?>
                 </div>
             </div>
