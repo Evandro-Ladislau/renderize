@@ -19,7 +19,7 @@ include_once 'app/sts/header_renderize.php'; // incui o header
     $cmd = $pdo->query("SELECT masth.*, 
                         cor.cor FROM `sts_masthead` 
                         masth INNER JOIN sts_cors cor ON cor.id=masth.sts_cor_id 
-                        WHERE  sts_situacoe_id=1 ");
+                        WHERE  sts_situacoe_id=$sts_situacoe AND masth.id=1");
 
     $result_masthead = $cmd->fetchAll(PDO::FETCH_ASSOC);
 
@@ -65,7 +65,7 @@ include_once 'app/sts/header_renderize.php'; // incui o header
             $cmd = $pdo->query("SELECT about.*, 
                         cor.cor FROM `sts_sobre` 
                         about INNER JOIN sts_cors cor ON cor.id=about.sts_cor_id 
-                        WHERE  sts_situacoe_id=1 ");
+                        WHERE  sts_situacoe_id=$sts_situacoe");
 
             $result_about = $cmd->fetchAll(PDO::FETCH_ASSOC);
 
@@ -114,7 +114,7 @@ include_once 'app/sts/header_renderize.php'; // incui o header
     $cmd = $pdo->query("SELECT vantagem.*, 
                         cor.cor FROM `sts_vantagem` 
                         vantagem INNER JOIN sts_cors cor ON cor.id=vantagem.sts_cor_id 
-                        WHERE  sts_situacoe_id=1 ");
+                        WHERE  sts_situacoe_id=$sts_situacoe ");
 
     $result_vantagem = $cmd->fetchAll(PDO::FETCH_ASSOC);
 
@@ -165,7 +165,7 @@ include_once 'app/sts/header_renderize.php'; // incui o header
     <?php
     $sts_situacoe = 1;
     $cmd = $pdo->query("SELECT * FROM `sts_contato` 
-                WHERE  sts_situacoe_id=1 ");
+                WHERE  sts_situacoe_id=$sts_situacoe ");
 
     $result_contato = $cmd->fetchAll(PDO::FETCH_ASSOC);
     ?>

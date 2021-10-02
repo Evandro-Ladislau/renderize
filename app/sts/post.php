@@ -6,11 +6,11 @@ include_once 'app/sts/header_post.php';
 include_once 'app/sts/menu_post.php'; // inclui o menu do post
 require_once '../renderize/index.php';
 
-$cmd = $pdo->query("SELECT id, titulo, descricao, conteudo, imagem, slug, author, titulo_botao, created FROM sts_artigos 
+$cmd = $pdo->query("SELECT id, titulo, descricao, conteudo, imagem, slug, author, titulo_botao, qnt_acesso, created FROM sts_artigos 
                                     WHERE sts_situacoe_id=1
                                     ORDER BY id DESC");
                     $result_postagem = $cmd->fetchAll(PDO::FETCH_ASSOC);
-                    $ac = 0;
+                   
                     if ($result_postagem) {
                         ?>
         <header class="masthead" style="background-image: url('<?php echo pg.'/assets';?><?php echo "/img/artigo/".$result_postagem[$i]['id']."/".$result_postagem[$i]['imagem'];?>')">
@@ -56,9 +56,24 @@ $cmd = $pdo->query("SELECT id, titulo, descricao, conteudo, imagem, slug, author
 
                             <?php
                         }
+                        
 ?>
 
+
         <?php
+        //IMPLEMENTAÇÃOCONTADOR DE ACESSO DOS ARTIGOS DO BLOG
+        $posturl = $endereco[1];
+        var_dump($posturl);
+        foreach ($result_postagem as $k);
+        if ($posturl == $k['slug']) {
+            $contador = $k['qnt_acesso'] + 1;
+        $update = $pdo->prepare("UPDATE sts_artigos SET qnt_acesso=:visitas WHERE slug=:posturl ");
+        $update->bindValue(':visitas', $contador);
+        $update->bindValue(':posturl',$posturl);
+        $update->execute();
+        }
+        
+        
         include_once 'app/sts/footer_blog.php';
         ?>   
 

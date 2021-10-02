@@ -6,22 +6,43 @@ include_once 'app/sts/header_blog.php'; // incui o arquivo header na pagina blog
 include_once 'app/sts/menu_blog.php'; // inclui o menu do blog
 require_once '../renderize/index.php';
 
+$sts_situacoe = 1;
+    $cmd = $pdo->query("SELECT masth.*, 
+                        cor.cor FROM `sts_masthead` 
+                        masth INNER JOIN sts_cors cor ON cor.id=masth.sts_cor_id 
+                        WHERE  sts_situacoe_id=$sts_situacoe AND masth.id=2");
+
+    $result_masthead = $cmd->fetchAll(PDO::FETCH_ASSOC);
+
+    
 ?>
 
 <body>
+    
+
     <!-- Page Header-->
-    <header class="masthead" style="background-image: url('assets/img/blog/home-bg.jpg')">
+
+    <?php
+        if ($result_masthead ) {
+            for ($i=0; $i <count($result_masthead) ; $i++) { 
+                ?>
+                <header class="masthead" style="background-image: url('<?php echo pg.'/assets/img/blog/'. $result_masthead[$i]['imagem'];  ?>')">
         <div class="container position-relative px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <div class="site-heading">
-                        <h1>Clean Blog</h1>
-                        <span class="subheading">A Blog Theme by Start Bootstrap</span>
+                        <h1><?php echo $result_masthead[$i]['titulo']?></h1>
+                        <span class="subheading"><?php echo $result_masthead[$i]['descricao']?></span>
                     </div>
                 </div>
             </div>
         </div>
     </header>
+    <?php
+            }
+        }
+    
+    ?>
     <!-- Main Content-->
     <section>
         <div class="container px-4 px-lg-5">
