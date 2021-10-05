@@ -63,18 +63,25 @@ $cmd = $pdo->query("SELECT id, titulo, descricao, conteudo, imagem, slug, author
         <?php
         //IMPLEMENTAÇÃOCONTADOR DE ACESSO DOS ARTIGOS DO BLOG
         $posturl = $endereco[1];
-        var_dump($posturl);
-        foreach ($result_postagem as $k);
-        if ($posturl == $k['slug']) {
-            $contador = $k['qnt_acesso'] + 1;
-        $update = $pdo->prepare("UPDATE sts_artigos SET qnt_acesso=:visitas WHERE slug=:posturl ");
-        $update->bindValue(':visitas', $contador);
-        $update->bindValue(':posturl',$posturl);
-        $update->execute();
+
+        for ($i=0; $i < count($result_postagem) ; $i++) { 
+            foreach ($result_postagem[$i] as $k){
+
+                if ($posturl == $result_postagem[$i]['slug']) {
+                    $contador = $result_postagem[$i]['qnt_acesso'] + 1;
+                $update = $pdo->prepare("UPDATE sts_artigos SET qnt_acesso=:visitas WHERE slug=:posturl ");
+                $update->bindValue(':visitas', $contador);
+                $update->bindValue(':posturl',$posturl);
+                $update->execute();
+                }
+                
+            }
+
         }
+        
+        
         
         
         include_once 'app/sts/footer_blog.php';
         ?>   
 
-?>
