@@ -20,7 +20,7 @@ todas as informações mostradas no site são dinamicas, isto é, trazidas do ba
 * JQUERY.
 * BANCO DE DADOS MYSQL.
 
-* [BOOTSTRAP](https://getbootstrap.com/) - O framework web usado
+* [BOOTSTRAP](https://getbootstrap.com/) - O framework web usado.
 
 
 ## 🎁 Expressões de gratidão
