@@ -1,7 +1,7 @@
 # Projeto -  Site e Blog Renderize
 
 Este projeto nasceu do meu desejo de me especializar no setor de tecnologia.
-Alem de mostrar o que conheço já conheço de programação web, me fez ganhar mais experiencia 
+Alem de mostrar o que já conheço de programação web, me fez ganhar mais experiencia 
 a cada superação de desafios que apareceu no decorrer do desenvolvimento do projeto.
 
 
