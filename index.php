@@ -41,7 +41,7 @@ $result_paginas = $cmd->fetchAll(PDO::FETCH_ASSOC);
     if(($result_paginas)){
 
         //neste caso eu percorri o array matriz e mandei ele trazer o cadastro da pagina na posição do index/nomedacoluna.
-        for ($i=0; $i <count($result_paginas) ; $i++) {
+        for ($i=0; $i < count($result_paginas) ; $i++) {
 
             $file = 'app/'.$result_paginas[$i]['tp_pagina'].'/'.$endereco[0].'.php';
         }

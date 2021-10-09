@@ -70,8 +70,8 @@ $cmd = $pdo->query("SELECT id, titulo, descricao, conteudo, imagem, slug, author
                 if ($posturl == $result_postagem[$i]['slug']) {
                     $contador = $result_postagem[$i]['qnt_acesso'] + 1;
                 $update = $pdo->prepare("UPDATE sts_artigos SET qnt_acesso=:visitas WHERE slug=:posturl ");
-                $update->bindValue(':visitas', $contador);
-                $update->bindValue(':posturl',$posturl);
+                $update->bindValue(':visitas', $contador, PDO::PARAM_INT);
+                $update->bindValue(':posturl',$posturl, PDO::PARAM_STR);
                 $update->execute();
                 }
                 
