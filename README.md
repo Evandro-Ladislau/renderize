@@ -2,9 +2,9 @@
 
 Este projeto nasceu do meu desejo de me especializar no setor de tecnologia.
 Alem de mostrar o que já conheço de programação web, me fez ganhar mais experiencia 
-a cada superação de desafios que apareceu no decorrer do desenvolvimento do projeto.
+a cada superação de desafios que me deparei no decorrer do desenvolvimento do projeto.
 
-
+git s
 ## 📦 Desenvolvimento
 Site Renderize apliacações Web e Blog - Renderize.
 
