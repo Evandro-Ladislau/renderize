@@ -7,10 +7,10 @@ a cada superação de desafios que me deparei no decorrer do desenvolvimento do 
 ## 📦 Desenvolvimento
 Site Renderize apliacações Web e Blog - Renderize.
 
-O site conta com informações sobre a empresas e área de contato onde é possível enviar mensagem pelo site ou pelo botão whatsapp.
+O site conta com informações sobre a empresa, área de contato por mensagem ou através do botão whatsapp.
 O blog é a área em que dedicarei um pouco do meu tempo para falar sobre tecnologia e mostrar as vantagens que ela pode trazer para grandes e pequenas empresas.
 
-todas as informações mostradas no site são dinamicas, isto é, trazidas do banco de dados e mostrada no site e blog por meio de codigos de eprogramação.
+todas as informações mostradas no site são dinamicas, isto é, trazidas do banco de dados e mostrada no site e blog por meio de códigos de eprogramação.
 
 ## 🛠️ Tecnologias Utilizadas
 
